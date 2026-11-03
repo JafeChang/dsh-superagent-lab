@@ -9,9 +9,25 @@ requests of its own.
 A dependency-free Node.js library (ESM, Node 22+) that formats byte counts, plus a small CLI.
 
 ```sh
+node --test                    # run the tests
+```
+
+## Usage
+
+Use `formatBytes` from JavaScript:
+
+```js
+import { formatBytes } from './src/bytes.js'
+
+formatBytes(1536) // '1.5 KiB'
+formatBytes(0)    // '0 B'
+```
+
+Or run the CLI with one or more byte counts; `--json` returns structured entries:
+
+```sh
 node src/cli.js 1536           # 1.5 KiB
 node src/cli.js --json 1536 0  # [{"bytes":1536,"value":"1.5","unit":"KiB"},{"bytes":0,"value":"0","unit":"B"}]
-node --test                    # run the tests
 ```
 
 Documented behaviour of `formatBytes(bytes)`:
