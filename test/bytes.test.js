@@ -24,8 +24,14 @@ test('refuses a byte count it cannot format', () => {
   assert.throws(() => formatBytes(Number.NaN), RangeError)
 })
 
-test('reports values at or above 1 TiB in TiB', () => {
+test('reports exactly 1 TiB in TiB', () => {
   assert.equal(formatBytes(1024 ** 4), '1.0 TiB')
+})
+
+test('reports exactly 1024 TiB in TiB', () => {
   assert.equal(formatBytes(1024 ** 5), '1024 TiB')
+})
+
+test('reports values above 1024 TiB in TiB', () => {
   assert.equal(formatBytes(1024 ** 6), '1048576 TiB')
 })
