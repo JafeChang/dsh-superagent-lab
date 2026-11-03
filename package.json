@@ -1,0 +1,13 @@
+{
+  "name": "dsh-superagent-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Byte formatting library and CLI, used as a playground for dsh-superagent.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
